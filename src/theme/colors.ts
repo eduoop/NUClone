@@ -10,6 +10,7 @@ export const colors = {
 
   purple: {
     600: "#BB86EF",
+    700: "#7E33C4",
     800: "#591E8C",
   },
 };

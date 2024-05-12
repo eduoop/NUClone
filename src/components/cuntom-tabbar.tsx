@@ -13,8 +13,19 @@ const CustomBar = ({ tabBarProps }: CustomBarProps) => {
   return (
     <View className="justify-center items-center">
       <View
+        style={{
+          shadowColor: "#fff",
+          shadowOffset: {
+            width: 0,
+            height: 0,
+          },
+          shadowOpacity: 0.12,
+          shadowRadius: 4.5, // Aumentei a dissipação para 4.5
+
+          elevation: 6,
+        }}
         className={cn(
-          "flex-row mb-6 items-center justify-center absolute bottom-0 bg-[rgba(255,255,255,0.9)] gap-2 shadow-md rounded-full",
+          "flex-row mb-6 items-center justify-center absolute bottom-0 bg-[#040404] gap-2 rounded-full",
           {
             "mb-9": Platform.OS === "ios",
           }
@@ -48,13 +59,18 @@ const CustomBar = ({ tabBarProps }: CustomBarProps) => {
               className="items-center justify-center"
             >
               <View className="items-center p-[4px]">
-                <View className={cn("p-2 bg-transparent rounded-full", {
-                    "bg-[#f8e2fd]": focused
-                })}>
+                <View
+                  className={cn(
+                    "p-2 px-[11px] bg-transparent rounded-full items-center justify-center",
+                    {
+                      "bg-[#32104C]": focused,
+                    }
+                  )}
+                >
                   <MaterialIcons
                     name={options.tabBarIcon as any}
                     size={38}
-                    color={focused ? "#8f2abd" : "#535353"}
+                    color={focused ? "#BE88FA" : "#535353"}
                   />
                 </View>
               </View>

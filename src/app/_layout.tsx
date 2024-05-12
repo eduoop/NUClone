@@ -25,7 +25,7 @@ const Layout = () => {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <View className="dark" style={{ flex: 1 }}>
       <StatusBar barStyle="light-content" />
       {fontsLoaded && <Slot />}
     </View>
