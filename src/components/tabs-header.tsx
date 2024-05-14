@@ -10,7 +10,7 @@ const TabsHeader = () => {
   const handleShowValues = () => setShowValues(!showValues);
 
   return (
-    <View className="bg-purple-800 pt-16 px-6 pb-6 border-b border-b-gray-500">
+    <View className="bg-purple-800 pt-16 px-6 pb-6 border-b-2 border-b-gray-800">
       {/* Header Top */}
       <View className="flex-row justify-between items-center">
         {/* Avatar */}

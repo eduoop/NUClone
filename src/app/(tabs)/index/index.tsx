@@ -1,16 +1,20 @@
 import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import HomeItem from "@/components/home-item";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import Feather from "@expo/vector-icons/Feather";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import ListHomeShortcuts from "@/components/ListHomeShortcuts";
+import { Card } from "@/components/Card";
+import Octicons from "@expo/vector-icons/Octicons";
+import TabsHeader from "@/components/tabs-header";
+import CreditInvoice from "@/components/CreditInvoice";
+import Loan from "@/components/Loan";
+import Reminder from "@/components/Reminder";
+import ListDiscoveries from "@/components/ListDiscoveries";
 
 const Index = () => {
   return (
-    <View className="flex-1 bg-black">
+    <ScrollView className="flex-1 bg-black" showsVerticalScrollIndicator={false}>
+      <TabsHeader />
+
       <View className="px-6">
         <View className="flex-row items-center gap-2 pt-7">
           <Text className="text-white font-semibold text-xl">Conta</Text>
@@ -24,53 +28,44 @@ const Index = () => {
         <Text className="text-white font-semibold text-xl">R$ 0,25</Text>
       </View>
 
-      <ScrollView
-        horizontal={true}
-        className="mt-7"
-        showsHorizontalScrollIndicator={false}
-      >
-        <View className="px-5 flex-row gap-3">
-          <HomeItem title="Area Pix">
-            <FontAwesome6 name="pix" size={23} color="white" />
-          </HomeItem>
-          <HomeItem title="Pagar">
-            <Ionicons name="barcode-sharp" size={27} color="white" />
-          </HomeItem>
-          <HomeItem title="Adquirir">
-            <FontAwesome5 name="hand-holding-usd" size={24} color="white" />
-          </HomeItem>
-          <HomeItem title="Transferir">
-            <FontAwesome6 name="money-bill-transfer" size={22} color="white" />
-          </HomeItem>
-          <HomeItem title="Recarga">
-            <Feather name="smartphone" size={25} color="white" />
-          </HomeItem>
-          <HomeItem title="Cobrar">
-            <MaterialCommunityIcons
-              name="message-badge-outline"
-              size={24}
-              color="white"
-            />
-          </HomeItem>
-          <HomeItem title="Cobrar">
-            <MaterialCommunityIcons
-              name="safe-square-outline"
-              size={24}
-              color="white"
-            />
-          </HomeItem>
-          <HomeItem title="Depositar">
-            <FontAwesome6 name="sack-dollar" size={24} color="white" />
-          </HomeItem>
-          <HomeItem title="Investir">
-            <MaterialIcons name="signal-cellular-alt" size={26} color="white" />
-          </HomeItem>
-          <HomeItem title="Globalização">
-            <Feather name="globe" size={24} color="white" />
-          </HomeItem>
+      <ListHomeShortcuts />
+
+      <View className="px-6 mt-5">
+        <Card className="flex-row w-full p-4 rounded-[17px] gap-5">
+          <Octicons name="credit-card" size={24} color="white" />
+          <Text className="text-white font-semibold text-[15px]">
+            Meus Cartões
+          </Text>
+        </Card>
+      </View>
+
+      <View className="border border-border border-b-2 border-b-gray-800 pb-6">
+        <View className="px-6 mt-5">
+          <Card className="flex-row w-full p-4 rounded-[17px] gap-5">
+            <Text className="text-white font-[400] text-[15px] leading-6">
+              Conta PJ: organize o dinheiro do seu negócio.{" "}
+              <Text className="text-[#BE88FA] font-[400]">Abir conta PJ!</Text>
+            </Text>
+          </Card>
         </View>
-      </ScrollView>
-    </View>
+      </View>
+
+      <View className="border-b-2 border-b-gray-800 pb-6">
+        <CreditInvoice />
+      </View>
+
+      <View className="border-b-2 border-b-gray-800 pb-6">
+        <Loan />
+      </View>
+
+      <View className="border-b-2 border-b-gray-800 pb-6">
+        <Reminder />
+      </View>
+
+      <View className="pt-4 pb-32">
+        <ListDiscoveries />
+      </View>
+    </ScrollView>
   );
 };
 

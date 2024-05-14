@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import CustomBar from "@/components/cuntom-tabbar";
@@ -8,8 +8,6 @@ const TabsLayout = () => {
 
   return (
     <View className="flex-1">
-      <TabsHeader />
-
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,

@@ -61,7 +61,7 @@ const CustomBar = ({ tabBarProps }: CustomBarProps) => {
               <View className="items-center p-[4px]">
                 <View
                   className={cn(
-                    "p-2 px-[11px] bg-transparent rounded-full items-center justify-center",
+                    "p-[9px] px-[11px] bg-transparent rounded-full items-center justify-center",
                     {
                       "bg-[#32104C]": focused,
                     }
