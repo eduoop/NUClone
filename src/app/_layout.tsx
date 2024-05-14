@@ -10,6 +10,7 @@ import {
   Roboto_500Medium,
   Roboto_700Bold,
 } from "@expo-google-fonts/roboto";
+import UserValueSettingProvider from "@/contexts/userValueSetting";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,10 +26,12 @@ const Layout = () => {
   }
 
   return (
-    <View className="dark" style={{ flex: 1 }}>
-      <StatusBar barStyle="light-content" />
-      {fontsLoaded && <Slot />}
-    </View>
+    <UserValueSettingProvider>
+      <View className="dark" style={{ flex: 1 }}>
+        <StatusBar barStyle="light-content" />
+        {fontsLoaded && <Slot />}
+      </View>
+    </UserValueSettingProvider>
   );
 };
 

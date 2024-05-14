@@ -4,10 +4,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "./Avatar";
 import Octicons from "@expo/vector-icons/Octicons";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Feather from "@expo/vector-icons/Feather";
+import {useContext} from "react"
+import { UserValueSettingContext } from "@/contexts/userValueSetting";
 
 const TabsHeader = () => {
-  const [showValues, setShowValues] = useState(false);
-  const handleShowValues = () => setShowValues(!showValues);
+  const { showUserValue, toggleShowUserValue } = useContext(UserValueSettingContext)
 
   return (
     <View className="bg-purple-800 pt-16 px-6 pb-6 border-b-2 border-b-gray-800">
@@ -30,12 +31,12 @@ const TabsHeader = () => {
 
         {/* Functions */}
         <View className="flex-row gap-6 items-center">
-          {showValues ? (
-            <Pressable onPress={handleShowValues}>
+          {showUserValue ? (
+            <Pressable onPress={toggleShowUserValue}>
               <Octicons name="eye" size={22} color="white" />
             </Pressable>
           ) : (
-            <Pressable onPress={handleShowValues}>
+            <Pressable onPress={toggleShowUserValue}>
               <Octicons name="eye-closed" size={22} color="white" />
             </Pressable>
           )}

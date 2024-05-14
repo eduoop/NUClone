@@ -9,10 +9,17 @@ import CreditInvoice from "@/components/CreditInvoice";
 import Loan from "@/components/Loan";
 import Reminder from "@/components/Reminder";
 import ListDiscoveries from "@/components/ListDiscoveries";
+import { useContext } from "react";
+import { UserValueSettingContext } from "@/contexts/userValueSetting";
 
 const Index = () => {
+  const { showUserValue } = useContext(UserValueSettingContext);
+
   return (
-    <ScrollView className="flex-1 bg-black" showsVerticalScrollIndicator={false}>
+    <ScrollView
+      className="flex-1 bg-black"
+      showsVerticalScrollIndicator={false}
+    >
       <TabsHeader />
 
       <View className="px-6">
@@ -25,7 +32,18 @@ const Index = () => {
             color="white"
           />
         </View>
-        <Text className="text-white font-semibold text-xl">R$ 0,25</Text>
+        {showUserValue ? (
+          <Text className="text-white font-semibold text-xl">R$ 0,25</Text>
+        ) : (
+          <View className="flex-row items-center gap-[3px] mt-2">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <View
+                key={index}
+                className="w-[9px] h-[9px] bg-white rounded-full"
+              />
+            ))}
+          </View>
+        )}
       </View>
 
       <ListHomeShortcuts />
