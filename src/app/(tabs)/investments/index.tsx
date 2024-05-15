@@ -1,4 +1,11 @@
-import { View, Text, ScrollView, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Pressable,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 import React, { useContext, useState } from "react";
 import TabsHeader from "@/components/tabs-header";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -6,6 +13,8 @@ import { UserValueSettingContext } from "@/contexts/userValueSetting";
 import Feather from "@expo/vector-icons/Feather";
 import { cn } from "@/lib/utils";
 import ListMyInvestments from "@/components/ListMyInvestments";
+import InsuranceItem from "@/components/InsuranceItem";
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 
 const Investments = () => {
   const { showUserValue } = useContext(UserValueSettingContext);
@@ -103,8 +112,85 @@ const Investments = () => {
           </Pressable>
         </View>
       </ScrollView>
-      <View className="mt-8">
+
+      <View className="mt-8 border-b-2 border-b-gray-800 pb-6">
         <ListMyInvestments />
+      </View>
+
+      <View className="border-b-2 border-b-gray-800 pb-6">
+        <View className="px-6 pr-10">
+          <TouchableOpacity
+            style={{ width: 30, height: 30 }}
+            className="mt-7 bg-gray-800 justify-center items-center rounded-full"
+          >
+            <Image
+              source={require("@/assets/logo.png")}
+              className="w-[25px] h-[25px]"
+            />
+          </TouchableOpacity>
+          <View className="flex-row items-center gap-2 pt-4">
+            <Text className="text-white font-semibold text-xl">
+              Total em criptos
+            </Text>
+            <MaterialIcons
+              name="arrow-forward-ios"
+              className="mt-[3px]"
+              size={12}
+              color="white"
+            />
+          </View>
+          <Text className="font-[500] text-white">R$ 120,00</Text>
+        </View>
+      </View>
+
+      <View className="px-6 mt-6 mb-36">
+        <Text className="text-white font-semibold text-xl mb-4">Seguros</Text>
+        <View className="gap-3">
+          <InsuranceItem
+            label="Conhecer"
+            content={
+              <View className="flex-row items-center gap-4">
+                <Feather name="heart" size={20} color="white" />
+                <Text className="text-white font-semibold text-base">
+                  Seguro de vida
+                </Text>
+              </View>
+            }
+          />
+          <InsuranceItem
+            label="Conhecer"
+            content={
+              <View className="flex-row items-center gap-4">
+                <Feather name="smartphone" size={20} color="white" />
+                <Text className="text-white font-semibold text-base">
+                  Seguro Celular
+                </Text>
+              </View>
+            }
+          />
+          <InsuranceItem
+            label="R$ 57,00 / mês."
+            content={
+              <View className="flex-row items-center gap-4">
+                <FontAwesome5 name="car" size={20} color="white" />
+                <Text className="text-white font-semibold text-base">
+                  Seguro Auto
+                </Text>
+              </View>
+            }
+          />
+          <InsuranceItem
+            label="Conhecer"
+            content={
+              <View className="flex-row items-center gap-4">
+                <Feather name="home" size={20} color="white" />
+                <Text className="text-white font-semibold text-base">
+                  Seguro de vida
+                </Text>
+              </View>
+            }
+          />
+        </View>
       </View>
     </ScrollView>
   );

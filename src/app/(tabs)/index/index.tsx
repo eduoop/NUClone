@@ -57,7 +57,7 @@ const Index = () => {
         </Card>
       </View>
 
-      <View className="border border-border border-b-2 border-b-gray-800 pb-6">
+      <View className="border-b-2 border-b-gray-800 pb-6">
         <View className="px-6 mt-5">
           <Card className="flex-row w-full p-4 rounded-[17px] gap-5">
             <Text className="text-white font-[400] text-[15px] leading-6">
@@ -80,7 +80,8 @@ const Index = () => {
         <Reminder />
       </View>
 
-      <View className="pt-4 pb-32">
+      <View className="pt-8 pb-32">
+        <Text className="text-white font-semibold text-xl px-6 mb-4">Descubra mais</Text>
         <ListDiscoveries />
       </View>
     </ScrollView>
