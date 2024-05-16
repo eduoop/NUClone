@@ -1,10 +1,11 @@
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, Image } from "react-native";
 import React from "react";
 import TabsHeader from "@/components/tabs-header";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ListCashbacks from "@/components/ListCashbacks";
 import ListBanners from "@/components/ListBanners";
+import ListProducts from "@/components/ListProducts";
 
 const Shopping = () => {
   return (
@@ -56,6 +57,25 @@ const Shopping = () => {
 
       <View className="mb-3">
         <ListBanners />
+      </View>
+
+      <Text className="font-semibold text-white pl-6 pr-14 text-xl mt-4">
+        Shopping do NU indica
+      </Text>
+      <Text className="pl-6 pr-14 text-base mt-[3px] mb-3 text-gray-300/70">
+        Os maiores cashbacks por tempo limitado
+      </Text>
+      <View className="w-full flex-row items-center px-6 mb-[17px]">
+        <Image
+          className="w-full h-[100px] rounded-[10px]"
+          source={{
+            uri: "https://r1.community.samsung.com/isuuy43828/attachments/isuuy43828/br-community-other/330809/1/SSG_SmartThings%20-%20Promo%20-%20Banner%20Home%20(1080x564).jpg",
+          }}
+        />
+      </View>
+
+      <View className="mb-36">
+        <ListProducts />
       </View>
     </ScrollView>
   );
