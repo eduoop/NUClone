@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "floating-bar-app",
-    "slug": "floating-bar-app",
+    "name": "nu-clone",
+    "slug": "nu-clone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

@@ -1,4 +1,4 @@
-rootProject.name = 'floating-bar-app'
+rootProject.name = 'nu-clone'
 
 dependencyResolutionManagement {
   versionCatalogs {
